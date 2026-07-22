@@ -28,11 +28,16 @@ body {
 
 .navigation {
 	background: var(--nord-dark-bg);
-	font-size: 24px;
 	padding: 10px;
+}
+
+.nav-inner {
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	max-width: 1000px;
+	margin: 0 auto;
+	font-size: 24px;
 }
 
 .nav-link {
@@ -63,6 +68,34 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
+	min-height: 100vh;
+}
+
+.footer {
+	margin-top: auto;
+	background: var(--nord0);
+	border: 1px solid var(--nord1);
+	border-radius: 12px 12px 0 0;
+	max-width: 1000px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer-inner {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 30px;
+	font-size: 15px;
+}
+
+.footer-inner a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.footer-inner a:hover {
+	text-decoration: underline;
 }
 
 .hero {
@@ -130,17 +163,31 @@ body {
 	align-items: center;
 }
 
-.product .subtitle {
-	margin-bottom: 30px;
+.card {
+	background: var(--nord0);
+	border: 1px solid var(--nord1);
+	border-radius: 12px;
+	max-width: 1000px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.card-header {
+	display: flex;
+	align-items: center;
+	padding: 30px 0 0 30px;
+}
+
+.card-header-text {
+	flex: 1;
 }
 
 .hero .subtitle {
 	margin-bottom: 30px;
-}
-
-.product-image {
-	position: relative;
-	width: 100%;
 }
 
 .product-image img {
@@ -149,10 +196,6 @@ body {
 }
 
 .btn-tr {
-	position: fixed;
-	top: 50%;
-	right: 0;
-	translate: 0 -50%;
 	display: flex;
 	align-items: center;
 	gap: 0;
@@ -163,7 +206,6 @@ body {
 	transition: gap 0.2s, padding 0.2s;
 	overflow: hidden;
 	white-space: nowrap;
-	z-index: 100;
 }
 
 .btn-tr span {
@@ -179,6 +221,46 @@ body {
 
 .btn-tr:hover span {
 	max-width: 50px;
+}
+
+.features {
+	display: flex;
+	gap: 30px;
+	padding: 0 30px 30px;
+}
+
+.feature {
+	flex: 1;
+}
+
+.feature-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 6px;
+}
+
+.feature-icon {
+	font-size: 20px;
+}
+
+.feature-title {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.feature-desc {
+	font-size: 15px;
+	opacity: 0.7;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+	.features {
+		flex-direction: column;
+		gap: 24px;
+	}
 }
 
 .btn-buy {

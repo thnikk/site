@@ -13,21 +13,23 @@
 	<body>
 		<div class="content">
 		<div class="navigation">
-			<a class="logo-link" href="/">
-				<svg class="nav-logo" viewBox="0 0 228.846 121.94489" xmlns="http://www.w3.org/2000/svg">
-					<defs>
-						<mask id="logo-mask">
-							<rect width="228.846" height="121.94489" fill="white"/>
-							<path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="m 141.1483,87.697756 a 37.795276,37.795276 0 1 0 0,-53.4506 l -53.4506,53.45 a 37.7953,37.7953 0 1 1 0,-53.4506"/>
-						</mask>
-					</defs>
-					<rect width="228.846" height="121.94489" rx="60.972446" fill="currentColor" mask="url(#logo-mask)"/>
-				</svg>
-			</a>
-			<a class="nav-link" href="#"><i class="fa-solid fa-gamepad"></i> Models</a>
-			<a class="nav-link" href="#"><i class="fa-solid fa-file-lines"></i> Docs</a>
-			<a class="nav-link" href="#"><i class="fa-solid fa-store"></i> Shop</a>
-			<a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i> About</a>
+			<div class="nav-inner">
+				<a class="logo-link" href="/">
+					<svg class="nav-logo" viewBox="0 0 228.846 121.94489" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<mask id="logo-mask">
+								<rect width="228.846" height="121.94489" fill="white"/>
+								<path fill="none" stroke="black" stroke-width="20" stroke-linecap="round" d="m 141.1483,87.697756 a 37.795276,37.795276 0 1 0 0,-53.4506 l -53.4506,53.45 a 37.7953,37.7953 0 1 1 0,-53.4506"/>
+							</mask>
+						</defs>
+						<rect width="228.846" height="121.94489" rx="60.972446" fill="currentColor" mask="url(#logo-mask)"/>
+					</svg>
+				</a>
+				<a class="nav-link" href="#"><i class="fa-solid fa-gamepad"></i> Models</a>
+				<a class="nav-link" href="#"><i class="fa-solid fa-file-lines"></i> Docs</a>
+				<a class="nav-link" href="#"><i class="fa-solid fa-store"></i> Shop</a>
+				<a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i> About</a>
+			</div>
 		</div>
 			<main class="hero">
 				<div class="title-lg">thnikk's keypads</div>
@@ -36,16 +38,91 @@
 			</main>
 
 			<section class="product">
-				<div class="title-md">Fightboard</div>
-				<div class="subtitle">Alternative fightstick keypad</div>
-				<div class="product-image">
-					<img src="assets/fightboard-mx.png" alt="Fightboard">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-header-text">
+							<div class="title-md">Fightboard</div>
+							<div class="subtitle">Alternative fightstick keypad</div>
+						</div>
+						<a class="btn-buy btn-tr" href="https://www.etsy.com/shop/thnikk?section_id=41068960" target="_blank" rel="noopener noreferrer">
+							<i class="fa-solid fa-cart-shopping"></i>
+							<span>Buy</span>
+						</a>
+					</div>
+					<div class="product-image">
+						<img src="assets/fightboard-v3.png" alt="Fightboard">
+					</div>
+					<div class="features">
+						<div class="feature">
+							<div class="feature-header">
+								<span class="feature-icon"><i class="fa-solid fa-microchip"></i></span>
+								<span class="feature-title">LP and MX versions</span>
+							</div>
+							<div class="feature-desc">Different versions for supporting Cherry MX and Kailh Choc switches.</div>
+						</div>
+						<div class="feature">
+							<div class="feature-header">
+								<span class="feature-icon"><i class="fa-solid fa-keyboard"></i></span>
+								<span class="feature-title">Keyboard-like layout</span>
+							</div>
+							<div class="feature-desc">Designed for better ergonomics for desktop use. When you're not using it, you can easily put it away in a drawer.</div>
+						</div>
+						<div class="feature">
+							<div class="feature-header">
+								<span class="feature-icon"><i class="fa-solid fa-sliders"></i></span>
+								<span class="feature-title">Easy to configure</span>
+							</div>
+							<div class="feature-desc">Use the web config or built-in menu to configure the controller.</div>
+						</div>
+					</div>
 				</div>
-				<a class="btn-buy btn-tr" href="https://www.etsy.com/listing/845376230/fightboard-mx-v3" target="_blank" rel="noopener noreferrer">
-					<i class="fa-solid fa-cart-shopping"></i>
-					<span>Buy</span>
-				</a>
 			</section>
+			<section class="product">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-header-text">
+							<div class="title-md">Osu! Keypad</div>
+							<div class="subtitle">Compact rhythm game keypad</div>
+						</div>
+						<a class="btn-buy btn-tr" href="https://www.etsy.com/shop/thnikk?section_id=29269554" target="_blank" rel="noopener noreferrer">
+							<i class="fa-solid fa-cart-shopping"></i>
+							<span>Buy</span>
+						</a>
+					</div>
+					<div class="product-image">
+						<img src="assets/osu-keypad.jpg" alt="Osu! Keypad">
+					</div>
+					<div class="features">
+						<div class="feature">
+							<div class="feature-header">
+								<span class="feature-icon"><i class="fa-solid fa-plug"></i></span>
+								<span class="feature-title">Hot-swappable switches</span>
+							</div>
+							<div class="feature-desc">Hot-swap sockets allow you to use any Cherry MX compatible switches</div>
+						</div>
+						<div class="feature">
+							<div class="feature-header">
+								<span class="feature-icon"><i class="fa-solid fa-lightbulb"></i></span>
+								<span class="feature-title">Per-key backlighting</span>
+							</div>
+							<div class="feature-desc">LEDs under each key for an additional layer of feedback.</div>
+						</div>
+						<div class="feature">
+							<div class="feature-header">
+								<span class="feature-icon"><i class="fa-solid fa-pen"></i></span>
+								<span class="feature-title">Remappable</span>
+							</div>
+							<div class="feature-desc">Remap keys to any standard keyboard key.</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<div class="footer-inner">
+					<span>thnikk &copy; <script>document.write(new Date().getFullYear())</script></span>
+					<a href="https://twitter.com/thnikk" target="_blank" rel="noopener noreferrer">twitter</a>
+				</div>
+			</footer>
 		</div>
 
 	</body>
