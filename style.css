@@ -125,10 +125,23 @@ body {
 
 .footer-inner {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	padding: 20px 30px;
 	font-size: 15px;
+}
+
+.footer-inner > :first-child {
+	flex: 1;
+	text-align: left;
+}
+
+.footer-inner > .theme-toggle {
+	justify-content: center;
+}
+
+.footer-inner > :last-child {
+	flex: 1;
+	text-align: right;
 }
 
 .footer-inner a {
