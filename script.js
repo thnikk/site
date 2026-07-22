@@ -1,9 +1,15 @@
 (function() {
-	var theme = localStorage.getItem('theme') || 'auto';
-	if (theme === 'auto') {
-		theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-	}
+	var saved = localStorage.getItem('theme') || 'auto';
+	var theme = saved === 'auto'
+		? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+		: saved;
 	document.documentElement.setAttribute('data-theme', theme);
+
+	matchMedia('(prefers-color-scheme: light)').addEventListener('change', function() {
+		if (localStorage.getItem('theme') !== 'auto') return;
+		var t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+		document.documentElement.setAttribute('data-theme', t);
+	});
 
 	document.addEventListener('DOMContentLoaded', function() {
 		var current = localStorage.getItem('theme') || 'auto';
