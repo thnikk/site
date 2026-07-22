@@ -3,13 +3,14 @@
 		<title>Site</title>
 		<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 		<!-- disable auto dark mode -->
-		<meta name="color-scheme" content="only light">
+		<meta name="color-scheme" content="light dark">
 		<meta name="darkreader-lock">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css">
 		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
 	</head>
 	<body>
 		<div class="content">
@@ -120,6 +121,11 @@
 			<footer class="footer">
 				<div class="footer-inner">
 					<span>thnikk &copy; <script>document.write(new Date().getFullYear())</script></span>
+					<div class="theme-toggle">
+						<button class="theme-btn" data-theme="light" title="Light"><i class="fa-solid fa-sun"></i></button>
+						<button class="theme-btn" data-theme="dark" title="Dark"><i class="fa-solid fa-moon"></i></button>
+						<button class="theme-btn" data-theme="auto" title="Auto"><i class="fa-solid fa-gear"></i></button>
+					</div>
 					<a href="https://twitter.com/thnikk" target="_blank" rel="noopener noreferrer">twitter</a>
 				</div>
 			</footer>
