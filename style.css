@@ -39,19 +39,19 @@
 	--page-bg: #eceff4;
 	--text: #2e3440;
 	--card-bg: #e5e9f0;
-	--card-border: #d8dee9;
+	--card-border: #c8d0dc;
 	--btn-bg: #e5e9f0;
 	--btn-text: #2e3440;
-	--btn-border: #d8dee9;
-	--btn-hover-border: #d8dee9;
+	--btn-border: #c8d0dc;
+	--btn-hover-border: #c8d0dc;
 	--logo-color: #2e3440;
-	--nav-hover-bg: #d8dee9;
-	--nav-hover-border: #d8dee9;
+	--nav-hover-bg: #c8d0dc;
+	--nav-hover-border: #c8d0dc;
 	--footer-bg: #e5e9f0;
-	--footer-border: #d8dee9;
+	--footer-border: #c8d0dc;
 	--avatar-bg: #e5e9f0;
-	--avatar-border: #d8dee9;
-	--toggle-active-bg: #d8dee9;
+	--avatar-border: #c8d0dc;
+	--toggle-active-bg: #c8d0dc;
 }
 
 body {
