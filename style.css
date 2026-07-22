@@ -224,7 +224,7 @@ body {
 .btn-etsy {
 	color: var(--nord0);
 	background: var(--nord12);
-	border-color: rgba(46, 52, 64, 0.3);
+	border-color: var(--btn-border);
 }
 
 .product {
@@ -376,6 +376,11 @@ body {
 .btn-buy {
 	color: var(--nord0);
 	background: var(--nord14);
+	border: 1px solid var(--btn-border);
+}
+
+.btn-tr.btn-buy {
+	border-right: none;
 }
 
 .nav-logo {
