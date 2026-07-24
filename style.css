@@ -385,7 +385,7 @@ body {
 	line-height: 1.5;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 999px) {
 	.features {
 		flex-direction: column;
 		gap: 24px;
@@ -417,12 +417,6 @@ body {
 
 	.features {
 		padding: 0 16px 16px;
-	}
-
-	.footer-inner {
-		flex-direction: column;
-		align-items: center;
-		gap: 12px;
 	}
 
 	.avatar {
