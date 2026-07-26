@@ -121,7 +121,7 @@ body {
 	background: var(--footer-bg);
 	border: 1px solid var(--footer-border);
 	border-bottom: none;
-	border-radius: 12px 12px 0 0;
+	border-radius: 20px 20px 0 0;
 	max-width: 1000px;
 	width: 100%;
 	margin-left: auto;
@@ -156,6 +156,18 @@ body {
 
 .footer-inner a:hover {
 	text-decoration: underline;
+}
+
+.footer-inner > div:last-child {
+	display: flex;
+	gap: 20px;
+	justify-content: flex-end;
+	align-items: center;
+	flex: 1;
+}
+
+.footer-inner > div:last-child a {
+	font-size: 20px;
 }
 
 .theme-toggle {
@@ -255,7 +267,7 @@ body {
 .card {
 	background: var(--card-bg);
 	border: 1px solid var(--card-border);
-	border-radius: 12px;
+	border-radius: 20px;
 	max-width: 1000px;
 	width: 100%;
 	position: relative;
