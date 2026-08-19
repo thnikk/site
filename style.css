@@ -268,6 +268,12 @@ body {
 	border-color: var(--btn-border);
 }
 
+.btn svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em;
+}
+
 .product {
 	display: flex;
 	flex-direction: column;
