@@ -17,6 +17,11 @@
 	--nord14: #a3be8c;
 	--nord15: #b48ead;
 
+	--bg-1: var(--nord-dark-bg);
+	--bg-2: var(--nord0);
+	--bg-3: var(--nord1);
+	--bg-4: var(--nord2);
+
 	--page-bg: var(--nord-dark-bg);
 	--text: var(--nord4);
 	--card-bg: var(--nord0);
@@ -36,6 +41,11 @@
 }
 
 [data-theme="light"] {
+	--bg-1: #ffffff;
+	--bg-2: var(--nord6);
+	--bg-3: var(--nord5);
+	--bg-4: var(--nord4);
+
 	--page-bg: #eceff4;
 	--text: #2e3440;
 	--card-bg: #e5e9f0;
@@ -180,33 +190,34 @@ body {
 	font-size: 20px;
 }
 
+.theme-btn .icon {
+  height: 15px;
+  display: block;
+}
+
 .theme-toggle {
-	display: flex;
-	border: 1px solid var(--card-border);
-	border-radius: 999px;
-	overflow: hidden;
+  display: flex;
+  border: none;
+	background: var(--bg-1);
+	gap: 2px;
+	padding: 2px;
+  border-radius: 999px;
+  overflow: hidden;
 }
 
 .theme-btn {
-	background: transparent;
-	border: none;
-	color: inherit;
-	padding: 6px;
-	cursor: pointer;
-	font-size: 15px;
-	transition: background 0.15s;
-}
-
-.theme-btn:first-child {
-	border-radius: 999px 0 0 999px;
-}
-
-.theme-btn:last-child {
-	border-radius: 0 999px 999px 0;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.15s;
+	border-radius: 999px;
 }
 
 .theme-btn.active {
-	background: var(--toggle-active-bg);
+  background: var(--bg-3);
 }
 
 .hero {
@@ -266,6 +277,7 @@ body {
 	color: var(--nord0);
 	background: var(--nord12);
 	border-color: var(--btn-border);
+	padding: 10px 20px;
 }
 
 .btn svg {
@@ -347,9 +359,15 @@ body {
 	gap: 12px;
 }
 
+.product-image {
+	padding: 0px 10px;
+}
+
 .product-image img {
 	width: 100%;
 	display: block;
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 .btn-tr {
@@ -586,7 +604,6 @@ body {
 
 .nav-logo {
 	height: 40px;
-	margin: 0px 16px;
 	display: block;
 	fill: currentColor;
 }
