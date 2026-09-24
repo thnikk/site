@@ -12,13 +12,27 @@ function lastCommitYear() {
 	}
 }
 
-// Injects the year of the last commit into the footer placeholders
+function lastCommitDate() {
+	try {
+		return execSync(
+			'git log -1 --format=%cd --date=format:%Y-%m-%d HEAD',
+			{ encoding: 'utf8' }
+		).trim()
+	} catch {
+		return ''
+	}
+}
+
+// Injects the year of the last commit into the footer, with the full commit
+// date as a tooltip on the span
 const footerYearPlugin = {
 	name: 'vite:footer-year',
 	transformIndexHtml(html) {
+		const year = lastCommitYear()
+		const date = lastCommitDate()
 		return html.replace(
-			'<script>document.write(new Date().getFullYear())</script>',
-			lastCommitYear()
+			'<span>thnikk &hearts;&#xFE0E; <script>document.write(new Date().getFullYear())</script></span>',
+			`<span${date ? ` title="Last updated ${date}"` : ''}>thnikk &hearts;&#xFE0E; ${year}</span>`
 		)
 	},
 }
