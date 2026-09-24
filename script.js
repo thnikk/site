@@ -12,6 +12,17 @@
 	});
 
 	document.addEventListener('DOMContentLoaded', function() {
+		// Footer build-date tooltip from the server's Last-Modified header
+		var footerCopy = document.querySelector('.footer-inner > span');
+		if (footerCopy) {
+			var modified = new Date(document.lastModified);
+			if (!isNaN(modified.getTime())) {
+				var mm = String(modified.getMonth() + 1).padStart(2, '0');
+				var dd = String(modified.getDate()).padStart(2, '0');
+				footerCopy.title = 'Last updated ' + modified.getFullYear() + '-' + mm + '-' + dd;
+			}
+		}
+
 		var current = localStorage.getItem('theme') || 'auto';
 		document.querySelectorAll('.theme-btn').forEach(function(btn) {
 			if (btn.getAttribute('data-theme') === current) {
