@@ -379,7 +379,6 @@ body {
 	padding: 14px 16px;
 	font-size: 20px;
 	transition: gap 0.2s, padding 0.2s;
-	overflow: hidden;
 	white-space: nowrap;
 }
 
@@ -598,8 +597,72 @@ body {
 	border: 1px solid var(--btn-border);
 }
 
+/* The fillets are sized for their resting radius and grown with a transform on
+   hover, so the transition only touches the compositor. Registered as a number
+   so it can be transitioned at all. */
+@property --fillet-scale {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 1;
+}
+
 .btn-tr.btn-buy {
+	--fillet: 8px;
+	--fillet-scale: 1;
 	border-right: none;
+	position: relative;
+	transition: --fillet-scale 0.2s;
+}
+
+/* 1.75 scales the resting 8px fillet up to 14px. */
+.btn-tr.btn-buy:hover {
+	--fillet-scale: 1.75;
+}
+
+/* Concave fillets where the tab meets the card's right edge: the top and
+   bottom edges carry on and curve out into the edge. A card-background disc
+   bites the corner, a 1px ring traced by its shadow draws the arc, and the
+   green spill past the edge is the button fill continuing. Each is clipped to
+   that quadrant plus 4px, which is slack for subpixel rounding: the extra is
+   green over the tab's own fill, so it also eats the straight border there
+   without ever exposing it. Scaling happens around the corner where the button
+   edge meets the card edge, so the arc stays tangent to both at any size. */
+.btn-tr.btn-buy::before,
+.btn-tr.btn-buy::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	width: calc(var(--fillet) * 2);
+	height: calc(var(--fillet) * 2);
+	border-radius: 50%;
+	background: var(--card-bg);
+	transform: scale(var(--fillet-scale));
+	box-shadow:
+		0 0 0 calc(1px / var(--fillet-scale)) var(--btn-border),
+		0 0 0 calc(var(--fillet) * 2) var(--nord14);
+	pointer-events: none;
+}
+
+.btn-tr.btn-buy::before {
+	top: calc(-1px - var(--fillet) * 2);
+	transform-origin: 100% 100%;
+	clip-path: polygon(
+		var(--fillet) var(--fillet),
+		100% var(--fillet),
+		100% calc(100% + 4px),
+		var(--fillet) calc(100% + 4px)
+	);
+}
+
+.btn-tr.btn-buy::after {
+	bottom: calc(-1px - var(--fillet) * 2);
+	transform-origin: 100% 0;
+	clip-path: polygon(
+		var(--fillet) -4px,
+		100% -4px,
+		100% var(--fillet),
+		var(--fillet) var(--fillet)
+	);
 }
 
 .nav-logo {
