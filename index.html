@@ -59,8 +59,24 @@
 							<span>Buy</span>
 						</a>
 					</div>
-					<div class="product-image">
-						<img src="assets/fightboard-v3.1.jpg" alt="Fightboard">
+					<div class="product-image" data-version="mx">
+						<img class="version-img active" data-version="mx" src="assets/fightboard-v3.1.jpg" alt="Fightboard MX version">
+						<img class="version-img" data-version="lp" src="assets/fightboard-lp.jpg" alt="Fightboard LP version" aria-hidden="true">
+						<div class="version-switch">
+							<button class="version-btn active" data-version="mx" aria-pressed="true">
+								<svg class="stem-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+									<path d="M1.7 5.8h4.5V1.7h3.6v4.1h4.5v4.4h-4.5v4.1H6.2v-4.1H1.7z"/>
+								</svg>
+								<span class="version-label">MX</span>
+							</button>
+							<button class="version-btn" data-version="lp" aria-pressed="false">
+								<svg class="stem-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+									<rect x="3.3" y="1.5" width="3.6" height="13" rx="1.4"/>
+									<rect x="9.1" y="1.5" width="3.6" height="13" rx="1.4"/>
+								</svg>
+								<span class="version-label">LP</span>
+							</button>
+						</div>
 					</div>
 					<div class="features">
 						<div class="feature">

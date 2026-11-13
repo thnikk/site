@@ -41,6 +41,45 @@
 			});
 		});
 
+		// Product image version switcher: hover/focus previews, click selects
+		var versionImage = document.querySelector('.product-image[data-version]');
+		if (versionImage) {
+			var versionButtons = versionImage.querySelectorAll('.version-btn');
+			var versionImages = versionImage.querySelectorAll('.version-img');
+			var selectedVersion = versionImage.getAttribute('data-version') || 'mx';
+
+			var showVersion = function(version) {
+				versionImages.forEach(function(img) {
+					var active = img.getAttribute('data-version') === version;
+					img.classList.toggle('active', active);
+					if (active) {
+						img.removeAttribute('aria-hidden');
+					} else {
+						img.setAttribute('aria-hidden', 'true');
+					}
+				});
+			};
+
+			var selectVersion = function(version) {
+				selectedVersion = version;
+				showVersion(version);
+				versionButtons.forEach(function(btn) {
+					var active = btn.getAttribute('data-version') === version;
+					btn.classList.toggle('active', active);
+					btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+				});
+			};
+
+			versionButtons.forEach(function(btn) {
+				var version = btn.getAttribute('data-version');
+				btn.addEventListener('pointerenter', function() { showVersion(version); });
+				btn.addEventListener('pointerleave', function() { showVersion(selectedVersion); });
+				btn.addEventListener('focus', function() { showVersion(version); });
+				btn.addEventListener('blur', function() { showVersion(selectedVersion); });
+				btn.addEventListener('click', function() { selectVersion(version); });
+			});
+		}
+
 		var navs = document.querySelectorAll('.nav-inner');
 
 		function overflows(container) {
