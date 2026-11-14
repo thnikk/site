@@ -390,9 +390,9 @@ body {
 }
 
 /* The switch scales with the image itself rather than the window, since the
-   card stops growing at 1000px. Both halves are anchored to the photo's
-   midpoint, so the divider never moves: the hovered half widens outward only.
-   The container is a zero-size anchor at that midpoint. */
+   card stops growing at 1000px. The two buttons are anchored either side of
+   the photo's midpoint with a small gap between them, so the pair stays put
+   and the hovered button widens outward only. */
 .version-switch {
 	position: absolute;
 	top: clamp(12px, 1.8cqw, 18px);
@@ -408,10 +408,11 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.5em 0.9em;
+	padding: 0.5em;
 	background: color-mix(in srgb, var(--card-bg) 70%, transparent);
 	backdrop-filter: blur(8px);
-	border: 1px solid var(--card-border);
+	border: none;
+	border-radius: 999px;
 	color: var(--text);
 	font-family: inherit;
 	font-size: clamp(14px, 1.7cqw, 17px);
@@ -421,18 +422,13 @@ body {
 	transition: background 0.15s, color 0.15s;
 }
 
-/* Each half is cut off at the midpoint and rounded on its outer side, so the
-   two together read as one pill split down the centre. */
+/* Half the 0.4em gap keeps both buttons the same distance from the centre. */
 .version-btn[data-version="mx"] {
-	right: 0;
-	border-radius: 999px 0 0 999px;
-	border-right: none;
+	right: 0.2em;
 }
 
 .version-btn[data-version="lp"] {
-	left: 0;
-	border-radius: 0 999px 999px 0;
-	border-left: 1px solid var(--card-border);
+	left: 0.2em;
 }
 
 .version-btn:hover {
